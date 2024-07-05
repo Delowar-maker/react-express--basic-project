@@ -1,8 +1,10 @@
+import MasterLayout from "../components/MasterLayout";
+
 const LoginPage = () => {
   return (
-    <div>
+    <MasterLayout>
       <h1>Login page</h1>
-    </div>
+    </MasterLayout>
   );
 };
 

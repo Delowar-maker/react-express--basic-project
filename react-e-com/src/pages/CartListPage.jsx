@@ -1,8 +1,10 @@
+import MasterLayout from "../components/MasterLayout";
+
 const CartListPage = () => {
   return (
-    <div>
+    <MasterLayout>
       <h1>Cart List page</h1>
-    </div>
+    </MasterLayout>
   );
 };
 

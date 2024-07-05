@@ -13,4 +13,15 @@
    -React Router DOM  install: npm i react-router-dom
 
 
-  5. Project structure
+5. Project structure
+
+6. Intial route setUp
+
+7. Master Layout
+
+8. 404 Set Up
+
+
+
+
+  zustand same to redux
