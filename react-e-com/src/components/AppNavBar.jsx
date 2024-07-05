@@ -2,12 +2,15 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
+import logo from "../assets/images/logo.svg";
 import ValidationHelper from "../utility/ValidationHelper";
 const AppNavBar = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">
+          <img src={logo} alt="logo" width="30" height="24" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -18,12 +21,11 @@ const AppNavBar = () => {
             <NavLink className={"nav-link"} to="/">
               Home
             </NavLink>
-            <NavLink className={"nav-link"} to="/cart-list">
-              Cart List
-            </NavLink>
-            <NavLink className={"nav-link"} to="/login">
-              Login
-            </NavLink>
+            {ValidationHelper.isLogin() && (
+              <NavLink className={"nav-link"} to="/cart-list">
+                Cart List
+              </NavLink>
+            )}
           </Nav>
           {ValidationHelper.isLogin() ? (
             <button className="btn btn-danger">Logout</button>

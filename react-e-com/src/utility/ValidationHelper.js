@@ -7,8 +7,13 @@
 
 const ValidationHelper = {
     isLogin: () => {
-        return true;
+        return false;
     },
+
+    API_BASE: () => {
+        return "https://cart-api.teamrabbil.com/api"
+        // return "https://jsonplaceholder.typicode.com/posts"
+    }
     // // Other validation functions can be added here
     // isEmailValid: (email) => {
     //     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
