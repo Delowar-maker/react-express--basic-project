@@ -1,0 +1,14 @@
+1. Collect Back End Documentation
+
+2. Discover the back-end data flow
+
+3. Create New Stand alon Front end Project
+
+4. Install Front-end Packages
+   -Axios
+   -React Hot Toast
+   -Bootstrap
+   -React-Bootstrap
+   -Bootstrap-icon
+   -React Router DOM 
+   
