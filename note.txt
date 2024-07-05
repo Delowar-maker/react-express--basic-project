@@ -1,0 +1,16 @@
+1. Collect Back End Documentation
+
+2. Discover the back-end data flow
+
+3. Create New Stand alon Front end Project
+
+4. Install Front-end Packages
+   -Axios  install: npm i axios
+   -React Hot Toast  install: npm i react-hot-toast
+   -Bootstrap  install: npm i bootstrap
+   -React-Bootstrap  install: npm i react-bootstrap
+   -Bootstrap-icons  install: npm i bootstrap-icons
+   -React Router DOM  install: npm i react-router-dom
+
+
+  5. Project structure
