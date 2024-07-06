@@ -1,10 +1,14 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import {Link, NavLink} from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/logo.svg";
 import ValidationHelper from "../utility/ValidationHelper";
 const AppNavBar = () => {
+  const logout = () => {
+    sessionStorage.clear();
+    window.location.href = "/";
+  };
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -28,9 +32,13 @@ const AppNavBar = () => {
             )}
           </Nav>
           {ValidationHelper.isLogin() ? (
-            <button className="btn btn-danger">Logout</button>
+            <button onClick={logout} className="btn btn-danger">
+              Logout
+            </button>
           ) : (
-            <Link to='/login' className="btn btn-success">Login</Link>
+            <Link to="/login" className="btn btn-success">
+              Login
+            </Link>
           )}
         </Navbar.Collapse>
       </Container>

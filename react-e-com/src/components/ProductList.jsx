@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import FullScreenLoader from "./FullScreenLoader";
 import ValidationHelper from "../utility/ValidationHelper.js";
+import FullScreenLoader from "./FullScreenLoader";
 
 const ProductList = () => {
   const [data, setData] = useState(null);
@@ -22,9 +22,7 @@ const ProductList = () => {
   }, []);
 
   const CallProductList = async () => {
-    let res = await axios.get(
-        `${ValidationHelper.API_BASE()}/product-list`
-    );
+    let res = await axios.get(`${ValidationHelper.API_BASE()}/product-list`);
 
     let productList = res.data["data"];
     setData(productList);
@@ -54,6 +52,16 @@ const ProductList = () => {
   //     }
   //   }
   // };
+
+  const AddToCart = async (id) => {
+    try {
+      let res = await axios.post(`${ValidationHelper.API_BASE()}/create-cart`, {
+        product_id: id,
+      });
+    } catch (error) {
+      ValidationHelper.Unauthorized(error.response.status);
+    }
+  };
   return (
     <div>
       {data == null ? (
@@ -81,7 +89,10 @@ const ProductList = () => {
                     )}
                   </h5>
                   <h2>{item["title"]}</h2>
-                  <p>{item.body}</p>
+                  <button onClick={() => AddToCart(item["id"])}>
+                    Add To Cart
+                  </button>
+                  {/* <p>{item.body}</p> */}
                 </div>
               </div>
             ))}

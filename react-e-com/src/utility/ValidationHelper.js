@@ -7,11 +7,34 @@
 
 const ValidationHelper = {
     isLogin: () => {
-        return false;
+        let token = sessionStorage.getItem("token");
+        // lage code 
+        // if (token === null) {
+        //     return false;
+        // }
+        // else {
+        //     return true;
+        // }
+
+        //simplefy code
+        return token !== null
+
     },
 
-    isEntry:(value) => {
+    isEntry: (value) => {
         return value.length === 0
+    },
+    tokenHeader: () => {
+        return {
+            "token": sessionStorage.getItem("token")
+        }
+    },
+
+    Unauthorized: (code) => {
+        if (code === 401) {
+            sessionStorage.clear();
+            window.location.href = "/";
+        }
     },
 
     API_BASE: () => {
