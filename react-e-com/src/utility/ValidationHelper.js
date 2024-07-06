@@ -27,3 +27,18 @@ const ValidationHelper = {
 
 
 export default ValidationHelper;
+//
+//
+//
+// static API_BASE = 'https://cart-api.teamrabbil.com/api';
+// // static API_BASE() {
+// // 	return "https://cart-api.teamrabbil.com/api";
+// // }
+// static API_BASE = 'https://cart-api.teamrabbil.com/api';
+
+
+
+
+// static API_BASE() {
+//     return "https://cart-api.teamrabbil.com/api";
+// }

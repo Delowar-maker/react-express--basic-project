@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import FullScreenLoader from "./FullScreenLoader";
+import ValidationHelper from "../utility/ValidationHelper.js";
 
 const ProductList = () => {
   const [data, setData] = useState(null);
@@ -22,7 +23,7 @@ const ProductList = () => {
 
   const CallProductList = async () => {
     let res = await axios.get(
-      "https://cart-api.teamrabbil.com/api/product-list"
+        `${ValidationHelper.API_BASE()}/product-list`
     );
 
     let productList = res.data["data"];
