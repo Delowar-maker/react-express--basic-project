@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import ValidationHelper from "../utility/ValidationHelper.js";
 import FullScreenLoader from "./FullScreenLoader";
 
@@ -55,9 +56,16 @@ const ProductList = () => {
 
   const AddToCart = async (id) => {
     try {
-      let res = await axios.post(`${ValidationHelper.API_BASE()}/create-cart`, {
-        product_id: id,
-      });
+      let res = await axios.post(
+        `${ValidationHelper.API_BASE()}/create-cart/${id}`,
+        ValidationHelper.tokenHeader()
+      );
+
+      if (res.data["msg"] === "success") {
+        toast.success("Request Success");
+      } else {
+        toast.error("Request Failed");
+      }
     } catch (error) {
       ValidationHelper.Unauthorized(error.response.status);
     }
