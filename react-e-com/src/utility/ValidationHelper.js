@@ -10,6 +10,10 @@ const ValidationHelper = {
         return false;
     },
 
+    isEntry:(value) => {
+        return value.length === 0
+    },
+
     API_BASE: () => {
         return "https://cart-api.teamrabbil.com/api"
         // return "https://jsonplaceholder.typicode.com/posts"

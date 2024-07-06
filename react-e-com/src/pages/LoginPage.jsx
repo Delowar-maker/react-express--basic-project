@@ -1,9 +1,10 @@
 import MasterLayout from "../components/MasterLayout";
+import LoginForm from "../components/LoginForm.jsx";
 
 const LoginPage = () => {
   return (
     <MasterLayout>
-      <h1>Login page</h1>
+      <LoginForm/>
     </MasterLayout>
   );
 };

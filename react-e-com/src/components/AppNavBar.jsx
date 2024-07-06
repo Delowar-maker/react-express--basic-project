@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import logo from "../assets/images/logo.svg";
 import ValidationHelper from "../utility/ValidationHelper";
 const AppNavBar = () => {
@@ -30,7 +30,7 @@ const AppNavBar = () => {
           {ValidationHelper.isLogin() ? (
             <button className="btn btn-danger">Logout</button>
           ) : (
-            <button className="btn btn-success">Login</button>
+            <Link to='/login' className="btn btn-success">Login</Link>
           )}
         </Navbar.Collapse>
       </Container>
